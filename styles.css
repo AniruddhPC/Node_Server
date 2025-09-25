@@ -1,0 +1,398 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #fff;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.header {
+    background: #fff;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.07);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 32px;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 70px;
+}
+
+.logo img {
+    height: 40px;
+    width: auto;
+    display: block;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 32px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #444;
+    font-weight: 500;
+    font-size: 1.1rem;
+    transition: color 0.2s;
+}
+
+.nav-links li a:hover {
+    color: #007bff;
+}
+
+.user-name {
+    background: #e3f2fd;
+    color: #1976d2;
+    padding: 8px 22px;
+    border-radius: 18px;
+    font-weight: 500;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.user-name:hover {
+    background: #bbdefb;
+}
+
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+    min-height: 500px;
+    width: 100vw;
+    box-sizing: border-box;
+    gap: 2vw;
+}
+
+.hero-left {
+    flex: 1.2;
+    padding-left: 3vw;
+}
+
+.hero-left h1 {
+    font-size: 2.7rem;
+    font-weight: 700;
+    color: #222;
+    margin-bottom: 18px;
+    line-height: 1.15;
+}
+
+.hero-left .highlight {
+    color: #2196f3;
+    font-weight: 700;
+}
+
+.hero-left p {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 32px;
+    max-width: 480px;
+}
+
+.hero-btn {
+    padding: 14px 32px;
+    font-size: 1.1rem;
+    background: #2196f3;
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background 0.2s;
+}
+
+.hero-btn:hover {
+    background: #1769aa;
+}
+
+.hero-right {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-right img {
+    width: 320px;
+    max-width: 90%;
+    height: auto;
+    border-radius: 18px;
+    background: #fff;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+}
+
+@media (max-width: 900px) {
+    .hero {
+        flex-direction: column;
+        height: auto;
+        padding: 4vw 0;
+        gap: 32px;
+    }
+    .hero-left, .hero-right {
+        padding: 0;
+        width: 100%;
+        text-align: center;
+    }
+    .hero-left h1 {
+        font-size: 2rem;
+    }
+    .hero-left p, .hero-btn {
+        font-size: 1rem;
+    }
+    .hero-right img {
+        width: 70vw;
+    }
+}
+
+
+.footer {
+    background: #f9f9f9;
+    padding: 50px 0 30px 0;
+    margin-top: 40px;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    flex-wrap: wrap;
+    padding: 0 32px;
+}
+
+.footer-section {
+    flex: 1 1 250px;
+    min-width: 220px;
+    margin-bottom: 24px;
+}
+
+.footer-section h2 {
+    font-size: 1.3rem;
+    color: #1976d2;
+    margin-bottom: 14px;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+    font-size: 1.05rem;
+    margin: 0;
+}
+
+.footer-section li {
+    margin-bottom: 8px;
+    color: #444;
+}
+
+.footer-section p {
+    color: #555;
+    font-size: 1rem;
+    margin: 6px 0;
+}
+
+@media (max-width: 900px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+    }
+    .footer-section {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* About Us Page Styles */
+.about-section {
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.about-content {
+    margin-top: 40px;
+}
+
+.about-content h1 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.values {
+    margin: 40px 0;
+    padding: 30px;
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+.values ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.values li {
+    margin: 15px 0;
+    font-size: 1.1em;
+    color: #555;
+}
+
+.team-section {
+    margin-top: 50px;
+}
+
+.team-members {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.team-member {
+    flex: 1;
+    min-width: 250px;
+    text-align: center;
+}
+
+.team-member img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+/* Contact Page Styles */
+.contact-section {
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.contact-content {
+    display: flex;
+    gap: 50px;
+    margin-top: 40px;
+}
+
+.contact-info {
+    flex: 1;
+    padding: 30px;
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+.info-item {
+    margin: 20px 0;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.contact-form {
+    flex: 2;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.submit-btn {
+    background: #4CAF50;
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s;
+}
+
+.submit-btn:hover {
+    background: #45a049;
+}
+
+@media (max-width: 768px) {
+    .contact-content {
+        flex-direction: column;
+    }
+    
+    .team-member {
+        flex: 100%;
+    }
+}
+
+/* 404 Page Styles */
+.error-page {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: #f8f9fa;
+}
+
+.error-content {
+    padding: 20px;
+}
+
+.error-content h1 {
+    font-size: 120px;
+    color: #333;
+    margin: 0;
+    line-height: 1;
+}
+
+.error-content h2 {
+    font-size: 30px;
+    color: #666;
+    margin: 20px 0;
+}
+
+.error-content p {
+    color: #777;
+    margin-bottom: 30px;
+}
+
+.back-home {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.back-home:hover {
+    background-color: #45a049;
+}
