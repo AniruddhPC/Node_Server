@@ -1,47 +1,86 @@
 const http = require('http');
-const fs = require('fs');
-const path = require('path');
 
 const server = http.createServer((req, res) => {
-  let filePath = '';
-  let contentType = 'text/html';
-
   if (req.url === '/' || req.url === '/home') {
-    filePath = path.join(__dirname, 'index.html');
+    res.writeHead(200, { 'Content-Type': 'text/html' });
+    res.end(`
+      <html>
+      <head><title>My First Server</title></head>
+      <body bgcolor="lightblue">
+        <center>
+          <font size="7" color="blue">Welcome!</font>
+          <br><br>
+          <table border="1">
+            <tr>
+              <td><a href="/about"><font size="5">About</font></a></td>
+              <td><a href="/contact"><font size="5">Contact</font></a></td>
+            </tr>
+          </table>
+        </center>
+      </body>
+      </html>
+    `);
   } else if (req.url === '/about') {
-    filePath = path.join(__dirname, 'about-us.html');
+    res.writeHead(200, { 'Content-Type': 'text/html' });
+    res.end(`
+      <html>
+      <head><title>About Page</title></head>
+      <body bgcolor="lightgreen">
+        <center>
+          <font size="6" color="green">About Me</font>
+          <br><br>
+          <ul>
+            <li>My first Server</li>
+            <li>Made with Node.js</li>
+          </ul>
+          <br>
+          <a href="/"><font size="4">Click Here to Go Home</font></a>
+        </center>
+      </body>
+      </html>
+    `);
   } else if (req.url === '/contact') {
-    filePath = path.join(__dirname, 'contact-us.html');
-  } else if (req.url.endsWith('.css')) {
-    filePath = path.join(__dirname, req.url);
-    contentType = 'text/css';
-  } else if (req.url.match(/\.(jpg|jpeg)$/)) {
-    filePath = path.join(__dirname, req.url);
-    contentType = 'image/jpeg';
-  } else if (req.url.endsWith('.png')) {
-    filePath = path.join(__dirname, req.url);
-    contentType = 'image/png';
-  } else if (req.url.endsWith('.gif')) {
-    filePath = path.join(__dirname, req.url);
-    contentType = 'image/gif';
+    res.writeHead(200, { 'Content-Type': 'text/html' });
+    res.end(`
+      <html>
+      <head><title>Contact Page</title></head>
+      <body bgcolor="yellow">
+        <marquee><font color="red">Welcome to Contact Page!</font></marquee>
+        <center>
+          <font size="6">Contact Me</font>
+          <br><br>
+          <table border="2">
+            <tr>
+              <td>Email:</td>
+              <td>aniruddhpc340@gmail.com</td>
+            </tr>
+            <tr>
+              <td>Phone:</td>
+              <td>8660228137</td>
+            </tr>
+          </table>
+          <br>
+        </center>
+      </body>
+      </html>
+    `);
   } else {
-    filePath = path.join(__dirname, '404.html');
     res.writeHead(404, { 'Content-Type': 'text/html' });
-    fs.readFile(filePath, (err, data) => {
-      res.end(data);
-    });
-    return;
+    res.end(`
+      <html>
+      <head><title>Error Page</title></head>
+      <body bgcolor="pink">
+        <center>
+          <font size="7" color="red">ERROR 404!</font>
+          <br><br>
+          <blink>Page Not Found</blink>
+          <br><br>
+          <a href="/"><font color="blue"><u>Go Back Home</u></font></a>
+        </center>
+      </body>
+      </html>
+    `);
   }
-
-  fs.readFile(filePath, (err, data) => {
-    if (err) {
-      res.writeHead(500, { 'Content-Type': 'text/plain' });
-      res.end('Server Error');
-    } else {
-      res.writeHead(200, { 'Content-Type': contentType });
-      res.end(data);
-    }
-  });
 });
 
 const PORT = 3000;
