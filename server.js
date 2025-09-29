@@ -1,4 +1,5 @@
 const http=require('http')
+const { escape } = require('querystring')
 
 const server=http.createServer((req,res)=>{
   if(req.url === '/home' || req.url==='/')
@@ -33,6 +34,16 @@ const server=http.createServer((req,res)=>{
     `<html>
     <body bgcolor="red">
       <p>My contact page</p>
+      </body>
+      </html>`
+    )
+  }
+  else{
+    res.writeHead(404,{'contentType':'text/html'})
+    res.write(
+      `<html>
+    <body bgcolor="red">
+      <p>Page Not Found </p>
       </body>
       </html>`
     )
